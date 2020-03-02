@@ -15,7 +15,13 @@
     }, {
         "uri": "plugin://aleth.io/eth-lite?v=4.1.0",
         "config": {
-            "nodeUrl": "https://mainnet.infura.io/"
+            "nodeUrl": "https://rpc.testnet.myubi.io",
+            "ethSymbol": "MYU"
+        },
+        "translations": {
+            "en-US": {
+                "dashboardView.title": "MYUBI (Testnet) Explorer"
+            }
         }
     }],
 
@@ -94,6 +100,12 @@
         "def": "page://aleth.io/dashboard",
         "children": {
             "content": [
+                {
+                    "def": "module://aleth.io/dashboard/network",
+                    "options": {
+                        "networkName": "MYUBI (Testnet)"
+                    }
+                },
                 { "def": "module://aleth.io/search" },
                 {
                     "def": "context://aleth.io/dashboard/latestBlockRange",
