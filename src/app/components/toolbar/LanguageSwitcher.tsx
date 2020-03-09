@@ -52,13 +52,19 @@ export class LanguageSwitcher extends React.Component<ILanguageSwitcherProps> {
     private layerVisible = false;
     private layerEl: HTMLElement;
     private targetEl: HTMLElement;
+    private singleLocales: any[];
 
     private localeInfos: ILocaleInfo[];
 
     constructor(props: ILanguageSwitcherProps) {
         super(props);
+        this.singleLocales = this.props.appConfig.getAvailableLocales()
+            .filter((locale) => {
+                return locale === "en-US";
+            });
+        // this.localeInfos = this.props.appConfig.getAvailableLocales()
+        this.localeInfos = this.singleLocales
 
-        this.localeInfos = this.props.appConfig.getAvailableLocales()
             .map(locale => {
                 let data = (locales as any[]).find(d => d.locale === locale);
                 return {
@@ -84,7 +90,7 @@ export class LanguageSwitcher extends React.Component<ILanguageSwitcherProps> {
     private renderPopover() {
         return <div style={{ padding: "8px 16px" }} ref={ref => this.layerEl = ref!}>
             <div>
-                { this.localeInfos.map(({locale, label, flag}) => (
+                {this.localeInfos.map(({ locale, label, flag }) => (
                     <ListItem key={locale} onClick={() => this.selectLocale(locale)}>
                         <Flag src={flag} />
                         {label}

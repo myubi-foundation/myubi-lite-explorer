@@ -6,21 +6,21 @@
     "pluginsUrl": "plugins",
 
     "plugins": [{
-        "uri": "plugin://aleth.io/eth-common?v=4.0.0"
+        "uri": "plugin://aleth.io/eth-common"
     }, {
-        "uri": "plugin://aleth.io/3box?v=1.1.1",
+        "uri": "plugin://aleth.io/3box",
         "config": {
             "ipfsUrlMask": "https://ipfs.infura.io/ipfs/%s"
         }
     }, {
-        "uri": "plugin://aleth.io/eth-lite?v=4.1.0",
+        "uri": "plugin://aleth.io/eth-lite",
         "config": {
-            "nodeUrl": "https://rpc.testnet.myubi.io",
+            "nodeUrl": "https://rpc.myubi.io",
             "ethSymbol": "MYU"
         },
         "translations": {
             "en-US": {
-                "dashboardView.title": "MYUBI (Testnet) Explorer"
+                "dashboardView.title": "MYUBI Explorer"
             }
         }
     }],
@@ -103,7 +103,7 @@
                 {
                     "def": "module://aleth.io/dashboard/network",
                     "options": {
-                        "networkName": "MYUBI (Testnet)"
+                        "networkName": "MYUBI"
                     }
                 },
                 { "def": "module://aleth.io/search" },
